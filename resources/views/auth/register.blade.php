@@ -6,7 +6,7 @@
         <div class="row mb-5">
             <div class="col-md-8 mx-auto mb-5">
                 <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+                    <div class="card-header">Регистрация</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">

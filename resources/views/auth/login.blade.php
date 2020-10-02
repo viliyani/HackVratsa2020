@@ -7,7 +7,7 @@
             <div class="col-md-8 mx-auto mb-5">
 
                 <div class="card">
-                    <div class="card-header">Вход</div>
+                    <h5 class="card-header">Вход</h5>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">

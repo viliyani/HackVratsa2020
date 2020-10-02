@@ -11,14 +11,22 @@
 |
 */
 
+// Начална страница
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+// Автентикация
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Страници изискващи логнат потребител
+Route::middleware(['auth'])->group(function () {
+    // Табло на потребителя
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/logged_example', function () {
-    return view('logged_example');
-})->name('logged_example');
+    // Примерна страница
+    Route::get('/logged_example', function () {
+        return view('logged_example');
+    })->name('logged_example');
+    
+});

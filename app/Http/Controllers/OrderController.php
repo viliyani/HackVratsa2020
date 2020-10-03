@@ -74,7 +74,7 @@ class OrderController extends Controller
 
     public function pending() 
     {
-        $
-        return view('orders.pending')
+        $orders = Order::where('assistant_id', auth()->user()->id)->where('status', 2)->paginate(10);
+        return view('orders.pending')->withOrders($orders);
     }
 }

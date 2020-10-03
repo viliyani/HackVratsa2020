@@ -34,10 +34,33 @@
             </div>
             <div class="col-md-9 mb-5">
                 <div class="card">
-                    <h5 class="card-header">Табло</h5>
+                    <h5 class="card-header">Профил</h5>
 
                     <div class="card-body">
-                        <p>Тук ще бъде инфото от публичния профил. Това най-накрая ще го оправим, като имаме публичния профил, ще сложим тук инфото, за да може човека сам да си вижда инфото още като влезе.</p>
+                        <div class="row">
+                            <div class="col">
+                                <img src="{{ Avatar::create($user->name)->toBase64() }}" />
+                            </div>
+                            <div class="col">
+                                <strong>{{ $user->name }}</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <strong>Имейл адрес:</strong>
+                            </div>
+                            <div class="col">
+                                <p>{{ $user->email }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <strong>Регистрация:</strong>
+                            </div>
+                            <div class="col">
+                                <p>{{ $user->created_at }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

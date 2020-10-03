@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light scrolled awake" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="{{route('welcome')}}">
-            <img src="{{asset('images/logo.png')}}" alt="" width="300" height="60">
+            <img src="{{asset('images/logo.png')}}" alt="" height="60">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fas fa-bars"></i>

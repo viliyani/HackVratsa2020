@@ -1924,7 +1924,7 @@ textarea.form-control {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.4;
+  opacity: 0.1;
   z-index: 0;
 }
 .block-30.no-overlay:before {
@@ -1974,7 +1974,7 @@ textarea.form-control {
     font-size: 80px;
   }
 }
-.block-30 .btn {
+/* .block-30 .btn {
   background: #fff;
   border-radius: 0;
   border: 2px solid transparent;
@@ -1988,7 +1988,7 @@ textarea.form-control {
 .block-30 .btn:hover {
   border-color: #fff;
   color: #fff;
-}
+} */
 .block-30.block-30-sm,
 .block-30.block-30-sm .row {
   min-height: 700px;
@@ -2502,4 +2502,21 @@ textarea.form-control {
   padding-right: 2px;
   color: #ffd700;
   font-size: 20px;
+}
+
+.right-info-box {
+  background-color: #fff;
+  position: relative;
+  top: -150px;
+  left: 370px;
+  width: 420px;
+  height: 250px;
+  padding: 10px;
+  border: 2px solid #656565;
+}
+
+.right-info-box-title {
+  color: #000;
+  font-size: 1.7rem;
+  font-weight: 600;
 }

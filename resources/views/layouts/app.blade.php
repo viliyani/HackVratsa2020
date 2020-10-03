@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Карантинно Герои</title>
+    <title>Карантино Герои</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,7 +26,7 @@
             <div class="row pt-3">
                 <div class="col-md-12 text-center">
                     <p class="font-weight-bold">
-                        Карантинно Герои &copy; 2020
+                        Карантино Герои &copy; 2020
                     </p>
                 </div>
             </div>

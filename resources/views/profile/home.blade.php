@@ -13,27 +13,35 @@
 
                     <div class="card-body">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md-2">
                                 <img src="{{ Avatar::create($user->name)->toBase64() }}" />
                             </div>
-                            <div class="col">
-                                <strong>{{ $user->name }}</strong>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <strong>Имейл адрес:</strong>
-                            </div>
-                            <div class="col">
-                                <p>{{ $user->email }}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <strong>Присъединяване:</strong>
-                            </div>
-                            <div class="col">
-                                <p>{{ $user->created_at->diffForHumans() }}</p>
+
+                            <div class="col-md-8 mx-auto">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p><span class="font-weight-bold">Име:</span> {{ $user->name }}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><span class="font-weight-bold">Години:</span> {{ $user->age }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p><span class="font-weight-bold">Имейл:</span> {{ $user->email }}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><span class="font-weight-bold">Телефон:</span> {{ $user->phone }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p><span class="font-weight-bold">Град:</span> {{ $user->settlement }}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><span class="font-weight-bold">Адрес:</span> {{ $user->address }}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

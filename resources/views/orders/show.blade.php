@@ -14,10 +14,6 @@
                     <div class="card-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-10 mx-auto">
-                                    <h2>Заявки от хора под карантина</h2>
-                                    @if($orders->count() > 0)
-                                    @foreach($orders as $order)
                                     <div class="d-sm-flex p-2">
                                         <div>
                                             {!!
@@ -36,16 +32,10 @@
                                                 <strong>Населено място:</strong>
                                                 <span> {{ $order->user->settlement }}</span>
                                             </div>
-                                        <form action="{{ route('orders.update', $order->id) }}" method="POST">
-                                                @csrf
-                                                @method('PUT')
-                                                <button type="submit" class="btn btn-primary">Потвърди</a>
-                                            </form>
-                                        </div>
+                                            <div>
+                                                <strong>Статус: </strong> {{ $order->status }}
+                                            </div>
                                     </div>
-                                    @endforeach
-                                    {{ $orders->links() }}
-                                    @endif
                                 </div>
                             </div>
                         </div>

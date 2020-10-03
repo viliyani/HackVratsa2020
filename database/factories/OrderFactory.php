@@ -13,11 +13,6 @@ $factory->define(Order::class, function (Faker $faker) {
             $users = $role->users;
             return $users->random()->id;
         },
-        'assistant_id' => function(){
-            $role = Role::where('slug', 'assistant')->first();
-            $users = $role->users;
-            return $users->random()->id;
-        },
         'category_id' => function(){
             return factory('App\Category')->create()->id;
         },

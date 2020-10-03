@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Order;
 use Illuminate\Http\Request;
 
+use Session;
+
 class OrderController extends Controller
 {
     /**
@@ -14,29 +16,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::latest('created_at')->paginate(10);
+        $orders = Order::whereNull('assistant_id')->paginate(10);
         return view('orders.index')->withOrders($orders);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -47,7 +28,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        return view('orders.show')->withOrder($order);
     }
 
     /**
@@ -70,7 +51,13 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        $order->assistant_id = auth()->user()->id;
+        $order->status = 2;
+        $order->save();
+        
+        Session::flash('alert-success', 'Успешно направихте заявка!');
+
+        return redirect()->route('orders.show', $order->id);
     }
 
     /**

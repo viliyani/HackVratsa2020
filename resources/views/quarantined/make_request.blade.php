@@ -34,6 +34,13 @@
                                                 <option value="2">Лекарства</option>
                                                 <option value="3">Друго</option>
                                             </select>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="cat-image">
+                                                        <img src="{{asset('images/other.png')}}">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <p class="text-center"><span class="font-weight-bold">Доставка:</span> 4 лв.</p>

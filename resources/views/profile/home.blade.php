@@ -42,6 +42,16 @@
                                         <p><span class="font-weight-bold">Адрес:</span> {{ $user->address }}</p>
                                     </div>
                                 </div>
+                                @if(Auth::user()->hasRole('quarantined'))
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p><span class="font-weight-bold">Карантина от:</span> {{ $user->quarantine_started_at }}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><span class="font-weight-bold">Карантина до:</span> {{ $user->quarantine_finished_at }}</p>
+                                    </div>
+                                </div>
+                                @endif
                                 <div class="row">
                                     <div class="col-md-6">
                                         <a href="{{route('profile.edit')}}" class="btn btn-default">Редактирай профила</a>

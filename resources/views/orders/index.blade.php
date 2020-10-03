@@ -25,6 +25,7 @@
                                             !!}
                                         </div>
                                         <div class="p-3">
+                                            <span class="badge badge-success">Свободна</span>
                                             <div>
                                                 <strong>Описание:</strong>
                                                 <p> {{ $order->description }}</p>

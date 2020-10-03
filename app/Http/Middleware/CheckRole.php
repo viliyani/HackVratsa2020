@@ -16,10 +16,11 @@ class CheckRole
      */
     public function handle($request, Closure $next, $role)
     {
-        if (!$request->user()->hasRole($role)) {
-            abort(401);
+        if(auth()->check()) {
+            if ($request->user()->hasRole($role)) {
+                return $next($request);
+            }
         }
-
-        return $next($request);
+        abort(401);
     }
 }

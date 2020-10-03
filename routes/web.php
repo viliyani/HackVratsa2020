@@ -24,13 +24,16 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::middleware(['auth'])->group(function () {
     // Табло на потребителя
     Route::get('/home', 'ProfileController@index')->name('home');
-    Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
-
+    
     // Редактиране на профил
+    Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
+    Route::post('/profile/edit', 'ProfileController@update')->name('profile.update');
 
     // Примерна страница
     Route::get('/logged_example', function () {
         return view('logged_example');
     })->name('logged_example');
+
+    // ->middleware('role:assistant')
     
 });

@@ -35,31 +35,99 @@
             <div class="col-md-9 mb-5">
                 <div class="card">
                     <h5 class="card-header">Редактиране на профила</h5>
-
+                    @include('commons.msgs')
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p class="text-center font-weight-bold">Лични данни</p>
-                                <!-- 
-                                    име
-                                    телефон
-                                    адрес
-                                    ...
+                        <form method="POST" action="{{ route('profile.update') }}">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="text-center font-weight-bold">Лични данни</p>
+                                    <div class="form-group row">
+                                        <label for="name" class="col-md-3 col-form-label text-md-right">Име</label>
 
-                                 -->
+                                        <div class="col-md-7">
+                                            <input id="name" type="text" class="form-control" name="name" value="" autocomplete="off">
+                                        </div>
+                                    </div>
 
-                        
+                                    <div class="form-group row">
+                                        <label for="settlement" class="col-md-3 col-form-label text-md-right">Град</label>
+
+                                        <div class="col-md-7">
+                                            <input id="settlement" type="text" class="form-control" name="settlement" value="" autocomplete="off">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="address" class="col-md-3 col-form-label text-md-right">Адрес</label>
+
+                                        <div class="col-md-7">
+                                            <input id="address" type="text" class="form-control" name="address" value="" autocomplete="off">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="phone" class="col-md-3 col-form-label text-md-right">Телефон</label>
+
+                                        <div class="col-md-7">
+                                            <input id="phone" type="text" class="form-control" name="phone" value="" autocomplete="off">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="age" class="col-md-3 col-form-label text-md-right">Възраст</label>
+
+                                        <div class="col-md-7">
+                                            <input id="age" type="text" class="form-control" name="age" value="" autocomplete="off">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="text-center font-weight-bold">Акаунт</p>
+                                    <div class="form-group row">
+                                        <label for="phone" class="col-md-3 col-form-label text-md-right">Email</label>
+
+                                        <div class="col-md-7">
+                                            <input id="phone" type="text" class="form-control" name="phone" value="" autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="old_password" class="col-md-3 col-form-label text-md-right">Стара парола</label>
+
+                                        <div class="col-md-7">
+                                            <input id="old_password" type="password" class="form-control" name="old_password" value="" autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="new_password" class="col-md-3 col-form-label text-md-right">Нова парола</label>
+
+                                        <div class="col-md-7">
+                                            <input id="new_password" type="password" class="form-control" name="new_password" value="" autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="image" class="col-md-3 col-form-label text-md-right">Снимка</label>
+
+                                        <div class="col-md-7">
+                                            <input id="image" type="file" class="form-control" name="image" value="" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <p class="text-center font-weight-bold">Акаунт</p>
-                                <!-- 
-                                    снимка
-                                    имейл
-                                    парола - стара парола, нова парола ^ 2                                    
-
-                                 -->
+                            <div class="row">
+                                <div class="col-md-6 mx-auto">
+                                    <div class="form-group row mb-0">
+                                        <div class="col-md-6 mx-auto mt-4">
+                                            <button type="submit" class="btn btn-success btn-block">
+                                                Редактирай
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </form>
+
                     </div>
                 </div>
             </div>

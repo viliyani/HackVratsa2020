@@ -68,7 +68,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return redirect()->route('profile.edit')->with('alert-success', 'Успешно променихте профила!');
     }
 
     /**

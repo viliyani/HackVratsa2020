@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
 
 class ProfileController extends Controller
 {
@@ -69,9 +70,27 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        return redirect()->route('profile.edit')->with('alert-success', 'Успешно променихте профила!');
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+
+        $user = User::find(Auth::user()->id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->settlement = $request->settlement;
+        $user->address = $request->address;
+        $user->phone = $request->phone;
+        $user->age = $request->age;
+        $user->quarantine_started_at = $request->quarantine_started_at;
+        $user->quarantine_finished_at = $request->quarantine_finished_at;
+
+        $user->save();
+
+        return redirect()->route('profile.edit')->with('alert-success', 'Успешно редактирахте профила!');
     }
 
     /**

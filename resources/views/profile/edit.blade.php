@@ -84,26 +84,37 @@
 
                                     @if(Auth::user()->hasRole('quarantined'))
 
+                                    <p class="text-center">Карантина</p>
                                     <div class="form-group row">
-                                        <label for="quarantine_from" class="col-md-3 col-form-label text-md-right">Карантина от</label>
+                                        <label for="quarantine_started_at" class="col-md-3 col-form-label text-md-right">От</label>
 
                                         <div class="col-md-7">
-                                            <input id="quarantine_from" type="text" class="form-control" name="quarantine_from" value="{{$user->age}}" autocomplete="off">
+                                            <input id="quarantine_started_at" type="date" class="form-control" name="quarantine_started_at" value="{{$user->quarantine_started_at}}" autocomplete="off">
                                         </div>
+                                        
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="quarantine_finished_at" class="col-md-3 col-form-label text-md-right">До</label>
+
+                                        <div class="col-md-7">
+                                            <input id="quarantine_finished_at" type="date" class="form-control" name="quarantine_finished_at" value="{{$user->quarantine_finished_at}}" autocomplete="off">
+                                        </div>
+                                        
                                     </div>
 
                                     @endif
 
-
+                                
 
                                 </div>
                                 <div class="col-md-6">
                                     <p class="text-center font-weight-bold">Акаунт</p>
                                     <div class="form-group row">
-                                        <label for="phone" class="col-md-3 col-form-label text-md-right">Email</label>
+                                        <label for="email" class="col-md-3 col-form-label text-md-right">Email</label>
 
                                         <div class="col-md-7">
-                                            <input id="phone" type="text" class="form-control" name="phone" value="{{$user->email}}" autocomplete="off">
+                                            <input id="email" type="text" class="form-control" name="email" value="{{$user->email}}" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="form-group row">

@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/profile/edit', 'ProfileController@update')->name('profile.update');
 
     Route::resource('orders', 'OrderController');
+    ROute::get('orders/all', 'OrderController@pending')->name('orders.pending');
 
     // Примерна страница
     Route::get('/logged_example', function () {

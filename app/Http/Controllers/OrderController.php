@@ -70,4 +70,11 @@ class OrderController extends Controller
     {
         //
     }
+
+
+    public function pending() 
+    {
+        $
+        return view('orders.pending')
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class ProfileController extends Controller
 {
@@ -56,7 +57,8 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view("profile.edit");
+        $user = Auth::user();
+        return view("profile.edit", compact('user'));
     }
 
     /**

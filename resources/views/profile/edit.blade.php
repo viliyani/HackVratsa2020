@@ -46,7 +46,7 @@
                                         <label for="name" class="col-md-3 col-form-label text-md-right">Име</label>
 
                                         <div class="col-md-7">
-                                            <input id="name" type="text" class="form-control" name="name" value="" autocomplete="off">
+                                            <input id="name" type="text" class="form-control" name="name" value="{{$user->name}}" autocomplete="off">
                                         </div>
                                     </div>
 
@@ -54,7 +54,7 @@
                                         <label for="settlement" class="col-md-3 col-form-label text-md-right">Град</label>
 
                                         <div class="col-md-7">
-                                            <input id="settlement" type="text" class="form-control" name="settlement" value="" autocomplete="off">
+                                            <input id="settlement" type="text" class="form-control" name="settlement" value="{{$user->settlement}}" autocomplete="off">
                                         </div>
                                     </div>
 
@@ -62,7 +62,7 @@
                                         <label for="address" class="col-md-3 col-form-label text-md-right">Адрес</label>
 
                                         <div class="col-md-7">
-                                            <input id="address" type="text" class="form-control" name="address" value="" autocomplete="off">
+                                            <input id="address" type="text" class="form-control" name="address" value="{{$user->address}}" autocomplete="off">
                                         </div>
                                     </div>
 
@@ -70,7 +70,7 @@
                                         <label for="phone" class="col-md-3 col-form-label text-md-right">Телефон</label>
 
                                         <div class="col-md-7">
-                                            <input id="phone" type="text" class="form-control" name="phone" value="" autocomplete="off">
+                                            <input id="phone" type="text" class="form-control" name="phone" value="{{$user->phone}}" autocomplete="off">
                                         </div>
                                     </div>
 
@@ -78,9 +78,23 @@
                                         <label for="age" class="col-md-3 col-form-label text-md-right">Възраст</label>
 
                                         <div class="col-md-7">
-                                            <input id="age" type="text" class="form-control" name="age" value="" autocomplete="off">
+                                            <input id="age" type="text" class="form-control" name="age" value="{{$user->age}}" autocomplete="off">
                                         </div>
                                     </div>
+
+                                    @if(Auth::user()->hasRole('quarantined'))
+
+                                    <div class="form-group row">
+                                        <label for="quarantine_from" class="col-md-3 col-form-label text-md-right">Карантина от</label>
+
+                                        <div class="col-md-7">
+                                            <input id="quarantine_from" type="text" class="form-control" name="quarantine_from" value="{{$user->age}}" autocomplete="off">
+                                        </div>
+                                    </div>
+
+                                    @endif
+
+
 
                                 </div>
                                 <div class="col-md-6">
@@ -89,7 +103,7 @@
                                         <label for="phone" class="col-md-3 col-form-label text-md-right">Email</label>
 
                                         <div class="col-md-7">
-                                            <input id="phone" type="text" class="form-control" name="phone" value="" autocomplete="off">
+                                            <input id="phone" type="text" class="form-control" name="phone" value="{{$user->email}}" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="form-group row">

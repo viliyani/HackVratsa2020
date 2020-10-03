@@ -70,6 +70,19 @@
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="off">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="captcha" class="col-md-4 col-form-label text-md-right">Докажете, че не сте робот</label>
+                                <div class="col-md-6">
+                                    @captcha
+                                    <input type="text" id="captcha" name="captcha" autocomplete="off" class="form-control @error('captcha') is-invalid @enderror">
+
+                                    @error('captcha')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">

@@ -29,8 +29,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
     Route::post('/profile/edit', 'ProfileController@update')->name('profile.update');
 
+    Route::get('orders/pending', 'OrderController@pending')->name('orders.pending');
     Route::resource('orders', 'OrderController');
-    Route::get('orders/all', 'OrderController@pending')->name('orders.pending');
 
     // Примерна страница
     Route::get('/logged_example', function () {

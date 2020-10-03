@@ -40,7 +40,7 @@
                                         <p><span class="font-weight-bold">Име:</span> {{ $user->name }}</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <p><span class="font-weight-bold">Години:</span> {{ $user->age }}</p>
+                                        <p><span class="font-weight-bold">Години:</span> {{ $user->age ?? '[ Не е попълнено ]' }}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -48,24 +48,24 @@
                                         <p><span class="font-weight-bold">Имейл:</span> {{ $user->email }}</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <p><span class="font-weight-bold">Телефон:</span> {{ $user->phone }}</p>
+                                        <p><span class="font-weight-bold">Телефон:</span> {{ $user->phone ?? '[ Не е попълнено ]'}}</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <p><span class="font-weight-bold">Град:</span> {{ $user->settlement }}</p>
+                                        <p><span class="font-weight-bold">Град:</span> {{ $user->settlement ?? '[ Не е попълнено ]' }}</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <p><span class="font-weight-bold">Адрес:</span> {{ $user->address }}</p>
+                                        <p><span class="font-weight-bold">Адрес:</span> {{ $user->address ?? '[ Не е попълнено ]'}} </p>
                                     </div>
                                 </div>
                                 @if(Auth::user()->hasRole('quarantined'))
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <p><span class="font-weight-bold">Карантина от:</span> {{ $user->quarantine_started_at }}</p>
+                                        <p><span class="font-weight-bold">Карантина от:</span> {{ $user->quarantine_started_at ?? '[ Не е попълнено ]' }} </p>
                                     </div>
                                     <div class="col-md-6">
-                                        <p><span class="font-weight-bold">Карантина до:</span> {{ $user->quarantine_finished_at }}</p>
+                                        <p><span class="font-weight-bold">Карантина до:</span> {{ $user->quarantine_finished_at ?? '[ Не е попълнено ]' }}</p>
                                     </div>
                                 </div>
                                 @endif

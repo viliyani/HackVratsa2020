@@ -2497,3 +2497,9 @@ textarea.form-control {
   border:2px solid #000;
   background-color: #adffdf;
 }
+
+.rating-star {
+  padding-right: 2px;
+  color: #ffd700;
+  font-size: 20px;
+}

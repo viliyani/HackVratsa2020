@@ -37,3 +37,10 @@ Route::middleware(['auth'])->group(function () {
     // ->middleware('role:assistant')
     
 });
+
+// Асистенти
+Route::middleware(['role:assistant'])->group(function () {
+    Route::prefix('assistant')->group(function () {
+        Route::resource('/', 'AssistantController');
+    });
+});

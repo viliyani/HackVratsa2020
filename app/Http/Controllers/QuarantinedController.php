@@ -4,12 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Order;
 
 class QuarantinedController extends Controller
 {
-    public function makeRequestForm() {
+    public function makeRequestForm()
+    {
         $user = Auth::user();
         return view("quarantined.make_request", compact('user'));
+    }
+
+    public function makeRequestPost(Request $request)
+    {
+        $this->validate($request, [
+            'description' => 'required',
+        ]);
+
+        $order = new Order;
+        $order->user_id = Auth::user()->id;
+        $order->category_id = $request->category_id;
+        $order->status = 1;
+        $order->description = $request->description;
+        $order->save();
+
+        return redirect()->route('quarantined.my_requests')->with('alert-success', 'Успешно създадохте заявка!');
+    }
+
+    public function myRequests()
+    {
+        return view('quarantined.my_requests');
     }
 
     /**

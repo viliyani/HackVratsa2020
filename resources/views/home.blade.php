@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-3">
-                <div class="card bg-info">
+                <div class="card bg-secondary">
                     <h5 class="card-header text-white">Меню</h5>
                     <div class="card-body vertical-menu-card">
                         <div class="row">

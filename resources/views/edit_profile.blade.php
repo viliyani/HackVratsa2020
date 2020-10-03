@@ -34,10 +34,32 @@
             </div>
             <div class="col-md-9 mb-5">
                 <div class="card">
-                    <h5 class="card-header">Име на страницата</h5>
+                    <h5 class="card-header">Редактиране на профила</h5>
 
                     <div class="card-body">
-                        <p>Това е шаблон за страниците, когато потребителя е влязъл!</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-center font-weight-bold">Лични данни</p>
+                                <!-- 
+                                    име
+                                    телефон
+                                    адрес
+                                    ...
+
+                                 -->
+
+                        
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-center font-weight-bold">Акаунт</p>
+                                <!-- 
+                                    снимка
+                                    имейл
+                                    парола - стара парола, нова парола ^ 2                                    
+
+                                 -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

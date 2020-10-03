@@ -23,7 +23,10 @@ Route::get('/logout', 'Auth\LoginController@logout');
 // Страници изискващи логнат потребител
 Route::middleware(['auth'])->group(function () {
     // Табло на потребителя
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'ProfileController@index')->name('home');
+    Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
+
+    // Редактиране на профил
 
     // Примерна страница
     Route::get('/logged_example', function () {

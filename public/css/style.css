@@ -1975,3 +1975,8 @@ textarea.form-control {
 {
   padding: 0;
 }
+
+.vertical-menu-card .list-group a {
+  font-size: 17px;
+  font-weight: 400;
+}

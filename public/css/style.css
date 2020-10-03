@@ -2476,3 +2476,24 @@ textarea.form-control {
   font-size: 17px;
   font-weight: 400;
 }
+
+.cat-box {
+  border: 1px solid #b1b1b1;
+  cursor: pointer;
+}
+
+.cat-image {
+  padding: 15px;
+  border-bottom: 1px solid #b1b1b1;
+}
+
+.cat-name {
+  padding: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.cat-selected {
+  border:2px solid #000;
+  background-color: #adffdf;
+}

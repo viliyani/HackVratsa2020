@@ -14,10 +14,11 @@
 // Начална страница
 Route::get('/', function () {
     return view('welcome');
-})->name('welcome');
+})->name('welcome')->middleware('role:assistant');
 
 // Автентикация
 Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');
 
 // Страници изискващи логнат потребител
 Route::middleware(['auth'])->group(function () {

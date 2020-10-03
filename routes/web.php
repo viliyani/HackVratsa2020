@@ -29,12 +29,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
     Route::post('/profile/edit', 'ProfileController@update')->name('profile.update');
 
+    Route::resource('orders', 'OrderController');
+
     // Примерна страница
     Route::get('/logged_example', function () {
         return view('logged_example');
     })->name('logged_example');
-
-    // ->middleware('role:assistant')
     
 });
 

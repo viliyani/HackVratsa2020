@@ -86,7 +86,7 @@
                                 <div class="col-md-6">
                                     <p class="text-center font-weight-bold">Акаунт</p>
                                     <div class="form-group row">
-                                        <label for="email" class="col-md-3 col-form-label text-md-right">Email</label>
+                                        <label for="email" class="col-md-3 col-form-label text-md-right">Имейл адрес</label>
 
                                         <div class="col-md-7">
                                             <input id="email" type="text" class="form-control" name="email" value="{{$user->email}}" autocomplete="off">

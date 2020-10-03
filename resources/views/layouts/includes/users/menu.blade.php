@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="list-group">
                     @if ($user->hasRole('assistant'))
-                    <a href="#" class="list-group-item list-group-item-action">Асистент</a>
+                    <a href="{{ route('orders.index') }}" class="list-group-item list-group-item-action">Заявки</a>
                     @endif
                     <a href="#" class="list-group-item list-group-item-action">
                         Текст

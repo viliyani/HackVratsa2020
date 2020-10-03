@@ -4,16 +4,16 @@
 <div class="site-section mb-5">
     <div class="container">
         <div class="row mb-5">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 @include('layouts.includes.users.menu')
             </div>
-            <div class="col-md-9 mb-5">
+            <div class="col-md mb-5">
                 <div class="card">
                     <h5 class="card-header">Профил</h5>
 
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md">
                                 <img src="{{ Avatar::create($user->name)->toBase64() }}" />
                             </div>
 
@@ -54,7 +54,7 @@
                                 @endif
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <a href="{{route('profile.edit')}}" class="btn btn-default">Редактирай профила</a>
+                                        <a href="{{ route('profile.edit') }}" class="btn btn-outline-primary"><i class="fas fa-edit"></i> Редактирай профила</a>
                                     </div>
                                 </div>
                             </div>

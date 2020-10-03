@@ -64,7 +64,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Повтори паролата</label>
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Повторете паролата</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="off">
@@ -74,7 +74,7 @@
                                 <label for="captcha" class="col-md-4 col-form-label text-md-right">Докажете, че не сте робот</label>
                                 <div class="col-md-6">
                                     @captcha
-                                    <input type="text" id="captcha" name="captcha" autocomplete="off" class="form-control @error('captcha') is-invalid @enderror">
+                                    <input type="text" id="captcha" name="captcha" autocomplete="off" class="form-control mt-2 @error('captcha') is-invalid @enderror">
 
                                     @error('captcha')
                                     <span class="invalid-feedback" role="alert">

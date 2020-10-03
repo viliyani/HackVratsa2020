@@ -14,3 +14,4 @@
 <script src="{{asset('js/aos.js')}}"></script>
 <script src="{{asset('js/jquery.animateNumber.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
+<script src="{{ asset('js/app.js') }}"></script>

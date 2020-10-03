@@ -4,15 +4,15 @@
 <div class="site-section mb-5">
     <div class="container">
         <div class="row mb-5">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 @include('layouts.includes.users.menu')
             </div>
-            <div class="col-md-9 mb-5">
+            <div class="col-md mb-5">
                 <div class="card">
                     <h5 class="card-header">Редактиране на профила</h5>
                     @include('commons.msgs')
                     <div class="card-body">
-                        <form method="POST" action="{{ route('profile.update') }}">
+                        <form method="POST" action="{{ route('profile.update', auth()->user()->id) }}">
                             @csrf
                             <p class="text-center font-weight-bold">Лични данни</p>
                             <div class="form-group row">
@@ -89,7 +89,7 @@
 
                             @endif
 
-                            <hr>
+
 
                             <p class="text-center font-weight-bold">Профил</p>
                             <div class="form-group row">
@@ -97,7 +97,7 @@
 
                                 <div class="col-md-7">
                                     <input id="email" type="text" class="form-control" name="email"
-                                        value="{{$user->email}}" autocomplete="off" disabled>
+                                        value="{{$user->email}}" autocomplete="off">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -118,24 +118,19 @@
                                         value="" autocomplete="off">
                                 </div>
                             </div>
-                            {{-- <div class="form-group row">
-                                <label for="image" class="col-md-3 col-form-label text-md-right">Снимка</label>
-
-                                <div class="col-md-7">
-                                    <input id="image" type="file" class="form-control" name="image" value=""
-                                        autocomplete="off">
-                                </div>
-                            </div> --}}
-                            <div class="form-group">
-                                <div class="col-md-6 mx-auto">
-                                    <button type="submit" class="btn btn-primary btn-block">
-                                        <i class="fas fa-edit"></i> Редактирай
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 mx-auto">
+                            <div class="form-group row">
+                                <div class="col-md-10 mx-auto">
+                                    <button type="submit" class="btn btn-success btn-block">
+                                        <i class="fas fa-user-edit"></i> Редактирай
                                     </button>
                                 </div>
                             </div>
-                        </form>
-
+                        </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -17,28 +17,7 @@ class ProfileController extends Controller
     public function index()
     {
         $user = auth()->user();
-        return view("profile.home")->withUser($user);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return view('profile.home')->withUser($user);
     }
 
     /**
@@ -49,7 +28,8 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('profile.show')->withUser($user);
     }
 
     /**

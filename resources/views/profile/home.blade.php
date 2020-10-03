@@ -71,7 +71,7 @@
                                 @endif
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <a href="{{ route('profile.edit') }}" class="btn btn-outline-primary"><i class="fas fa-edit"></i> Редактирай профила</a>
+                                        <a href="{{ route('profile.edit', auth()->user()->id) }}" class="btn btn-outline-primary"><i class="fas fa-edit"></i> Редактирай профила</a>
                                     </div>
                                 </div>
                             </div>

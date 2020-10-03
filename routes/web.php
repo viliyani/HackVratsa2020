@@ -26,8 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'ProfileController@index')->name('home');
     
     // Редактиране на профил
-    Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
-    Route::post('/profile/edit', 'ProfileController@update')->name('profile.update');
+    Route::resource('profile', 'ProfileController');
 
     Route::get('orders/pending', 'OrderController@pending')->name('orders.pending');
     Route::resource('orders', 'OrderController');

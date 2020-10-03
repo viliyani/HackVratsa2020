@@ -20,12 +20,13 @@
                                     <hr>
                                     <div class="d-sm-flex p-2">
                                         <div>
-                                            {!!
+                                            <div>{!!
                                             Avatar::create($order->user->name)->setDimension(100)->setFontSize(50)->toSvg()
-                                            !!}
+                                            !!}</div>
+                                            <div class="mt-2"><a href="{{ route('profile.show', $order->user->id) }}" class="btn btn-outline-success btn-block">Профил</a></div>
                                         </div>
                                         <div class="p-3">
-                                            <span class="badge badge-success">Свободна</span>
+                                            <span class="badge badge-success p-2">Свободна</span>
                                             <div>
                                                 <strong>Описание:</strong>
                                                 <p> {{ $order->description }}</p>

@@ -14,7 +14,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('orders.index');
+        $orders = Order::latest('created_at')->paginate(10);
+        return view('orders.index')->withOrders($orders);
     }
 
     /**

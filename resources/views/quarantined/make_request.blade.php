@@ -29,21 +29,46 @@
                                     <p class="text-center font-weight-bold">Категория</p>
                                     <div class="form-group row">
                                         <div class="col-md-8 mx-auto">
-                                            <select name="category_id" class="form-control">
+                                            <select name="category_id" class="form-control cat-select-items" style="display: none;">
                                                 <option value="1">Храна</option>
                                                 <option value="2">Лекарства</option>
                                                 <option value="3">Друго</option>
                                             </select>
                                             <div class="row">
                                                 <div class="col-md-4">
-                                                    <div class="cat-image">
-                                                        <img src="{{asset('images/other.png')}}">
+                                                    <div class="cat-box" data-cat-box-num="1">
+                                                        <div class="cat-image">
+                                                            <img src="{{asset('images/food.png')}}" class="img-fluid">
+                                                        </div>
+                                                        <div class="cat-name">
+                                                            Храна
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="cat-box" data-cat-box-num="2">
+                                                        <div class="cat-image">
+                                                            <img src="{{asset('images/medicaments.png')}}" class="img-fluid">
+                                                        </div>
+                                                        <div class="cat-name">
+                                                            Лекарства
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="cat-box" data-cat-box-num="3">
+                                                        <div class="cat-image">
+                                                            <img src="{{asset('images/other.png')}}" class="img-fluid">
+                                                        </div>
+                                                        <div class="cat-name">
+                                                            Друго
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="text-center"><span class="font-weight-bold">Доставка:</span> 4 лв.</p>
+                                    <p class="text-center mt-5"><span class="font-weight-bold">Доставка:</span> 4 лв.</p>
                                     <p class="text-center font-weight-bold mt-4">Опишете от какво имате нужда:</p>
                                     <div class="form-group row">
                                         <div class="col-md-8 mx-auto">
@@ -71,4 +96,22 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script>
+    $(".cat-box").click(function() {
+        let catBoxNum = $(this).data("cat-box-num");
+
+        // Reset all selected cats
+        $(".cat-box").removeClass('cat-selected');
+        $("select[name=category_id] option").removeAttr('selected');
+
+        // Add class to selected cat
+        $(this).addClass('cat-selected');
+
+        // Change select option value
+        $("select[name=category_id] option[value="+catBoxNum+"]").attr('selected','selected');
+    });
+</script>
 @endsection

@@ -47,6 +47,9 @@ Route::middleware(['role:assistant'])->group(function () {
 
 // Карантинирани
 Route::middleware(['role:quarantined'])->group(function () {
+
+    Route::get('/quarantined/my_requests', 'QuarantinedController@myRequests')->name('quarantined.my_requests');
+
     Route::get('/quarantined/make_request', 'QuarantinedController@makeRequestForm')->name('quarantined.make_request');
     Route::post('/quarantined/make_request', 'QuarantinedController@makeRequestPost')->name('quarantined.make_request.post');
 });

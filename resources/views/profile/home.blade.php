@@ -42,6 +42,11 @@
                                         <p><span class="font-weight-bold">Адрес:</span> {{ $user->address }}</p>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="{{route('profile.edit')}}" class="btn btn-default">Редактирай профила</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

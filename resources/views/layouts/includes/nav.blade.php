@@ -14,7 +14,7 @@
                 <li class="nav-item"><a href="{{route('login')}}" class="nav-link">Вход</a></li>
                 <li class="nav-item"><a href="{{route('register')}}" class="nav-link">Регистрация</a></li>
                 @else
-                <li class="nav-item"><a href="#" class="nav-link">Профил</a></li>
+                <li class="nav-item"><a href="{{route('home')}}" class="nav-link">Профил</a></li>
             <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link">Изход</a></li>
                 @endguest
             </ul>

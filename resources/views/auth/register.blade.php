@@ -74,7 +74,8 @@
                                 <label for="captcha" class="col-md-4 col-form-label text-md-right">Докажете, че не сте робот</label>
                                 <div class="col-md-6">
                                     @captcha
-                                    <input type="text" id="captcha" name="captcha" autocomplete="off" class="form-control">
+                                    <input type="text" id="captcha" name="captcha" autocomplete="off" class="form-control @error('captcha') is-invalid @enderror">
+
                                     @error('captcha')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

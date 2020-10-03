@@ -14,7 +14,7 @@
 // Начална страница
 Route::get('/', function () {
     return view('welcome');
-})->name('welcome')->middleware('role:assistant');
+})->name('welcome');
 
 // Автентикация
 Auth::routes();

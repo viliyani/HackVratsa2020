@@ -23,5 +23,11 @@ class RolesTableSeeder extends Seeder
         $roleAssistant->slug = 'quarantined';
         $roleAssistant->description = 'Човек под карантина';
         $roleAssistant->save();
+
+        $roleAdmin = new Role;
+        $roleAdmin->name = 'Администратор';
+        $roleAdmin->slug = 'admin';
+        $roleAdmin->description = 'Има достъп до всичко.';
+        $roleAssistant->save();
     }
 }

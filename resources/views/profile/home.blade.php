@@ -13,8 +13,25 @@
 
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md">
-                                <img src="{{ Avatar::create($user->name)->toBase64() }}" />
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <img src="{{ Avatar::create($user->name)->toBase64() }}" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    
+                                    <div class="col-md-12 mt-4 text-center">
+                                        <i class="fas fa-star rating-star"></i>
+                                        <i class="fas fa-star rating-star"></i>
+                                        <i class="fas fa-star rating-star"></i>
+                                        <i class="fas fa-star-half-alt rating-star"></i>
+                                        <i class="far fa-star rating-star"></i>
+                                    </div>
+                                    <div class="col-md-12 text-center mt-2">
+                                        <span class="font-weight-bold">Рейтинг:</span> 3.5
+                                     </div>
+                                </div>
                             </div>
 
                             <div class="col-md-8 mx-auto">

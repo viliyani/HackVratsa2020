@@ -13,18 +13,7 @@
                     <a href="{{ route('quarantined.make_request') }}" class="list-group-item list-group-item-action">Направете заявка</a>
                     <a href="{{ route('quarantined.my_requests') }}" class="list-group-item list-group-item-action">Вашите заявки</a>
                     @endif
-                    <a href="#" class="list-group-item list-group-item-action">
-                        Текст
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        Текст
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        Текст
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        Текст
-                    </a>
+                    
                 </div>
             </div>
         </div>

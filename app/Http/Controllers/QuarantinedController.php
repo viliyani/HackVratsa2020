@@ -32,7 +32,8 @@ class QuarantinedController extends Controller
 
     public function myRequests()
     {
-        return view('quarantined.my_requests');
+        $orders = Order::where('user_id', Auth::user()->id)->OrderBy('created_at', 'desc')->paginate(10);
+        return view('quarantined.my_requests', compact('orders'));
     }
 
     /**

@@ -13,6 +13,7 @@
 
                     <div class="card-body">
                         <div class="container">
+                        @include('commons.msgs')
                             <div class="row">
                                 <div class="">
 

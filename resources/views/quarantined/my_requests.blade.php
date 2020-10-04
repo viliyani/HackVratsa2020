@@ -13,10 +13,39 @@
 
                     <div class="card-body">
                         @include('commons.msgs')
-                        <div class="row">
-                            <div class="col-md-12 mx-auto">
-                            
-
+                        <div class="container">
+                            <div class="row">
+                                <div class="">
+                                    @if($orders->count() > 0)
+                                    @foreach($orders as $order)
+                                    <hr>
+                                    <div class="d-sm-flex p-2">
+                                        <div>
+                                            <div>{!!
+                                                Avatar::create($order->user->name)->setDimension(100)->setFontSize(50)->toSvg()
+                                                !!}</div>
+                                            <div class="mt-2"><a href="{{ route('profile.show', $order->user->id) }}" class="btn btn-outline-success btn-block">Профил</a></div>
+                                        </div>
+                                        <div class="p-3">
+                                            <span class="badge badge-info p-2">Очакваща приемане</span>
+                                            <div>
+                                                <strong>Описание:</strong>
+                                                <p> {{ $order->description }} </p>
+                                            </div>
+                                            <div>
+                                                <strong>Категория: </strong> <u>{{ $order->category->name }}</u>
+                                            </div>
+                                            <div>
+                                                <strong>Населено място:</strong>
+                                                <span> {{ $order->user->settlement }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    @endforeach
+                                    {{ $orders->links() }}
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>

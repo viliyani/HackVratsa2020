@@ -16,7 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::whereNull('assistant_id')->paginate(10);
+        $orders = Order::whereNull('assistant_id')->OrderBy('created_at', 'desc')->paginate(10);
         return view('orders.index')->withOrders($orders);
     }
 
@@ -45,7 +45,7 @@ class OrderController extends Controller
         $order->status = 2;
         $order->save();
         
-        Session::flash('alert-success', 'Успешно направихте заявка!');
+        Session::flash('alert-success', 'Успешно приехте да изпълните тази заявка!');
 
         return redirect()->route('orders.show', $order->id);
     }
@@ -64,7 +64,7 @@ class OrderController extends Controller
 
     public function pending() 
     {
-        $orders = Order::where('assistant_id', auth()->user()->id)->where('status', 2)->paginate(10);
+        $orders = Order::where('assistant_id', auth()->user()->id)->where('status', 2)->OrderBy('created_at', 'desc')->paginate(10);
         return view('orders.pending')->withOrders($orders);
     }
 }

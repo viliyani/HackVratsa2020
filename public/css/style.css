@@ -2507,10 +2507,10 @@ textarea.form-control {
 .right-info-box {
   background-color: #fff;
   position: relative;
-  top: -150px;
+  top: -200px;
   left: 370px;
   width: 420px;
-  height: 250px;
+  height: 165px;
   padding: 10px;
   border: 2px solid #656565;
 }

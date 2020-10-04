@@ -38,7 +38,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
         $user = Auth::user();
         return view("profile.edit", compact('user'));
@@ -72,6 +72,29 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect()->route('profile.edit')->with('alert-success', 'Успешно редактирахте профила!');
+    }
+
+    public function editProfileCustom(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+
+        $user = User::find(Auth::user()->id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->settlement = $request->settlement;
+        $user->address = $request->address;
+        $user->phone = $request->phone;
+        $user->age = $request->age;
+        $user->quarantine_started_at = $request->quarantine_started_at;
+        $user->quarantine_finished_at = $request->quarantine_finished_at;
+
+        $user->save();
+
+        return redirect()->route('home')->with('alert-success', 'Успешно редактирахте профила!');
     }
 
     /**

@@ -21,6 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'ProfileController@index')->name('home');
 
     Route::resource('profile', 'ProfileController');
+    Route::post('profile_edit', 'ProfileController@editProfileCustom')->name('profile_edit');
 
     Route::get('orders/pending', 'OrderController@pending')->name('orders.pending');
     Route::resource('orders', 'OrderController');

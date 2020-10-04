@@ -12,7 +12,7 @@
                     <h5 class="card-header">Редактиране на профила</h5>
                     @include('commons.msgs')
                     <div class="card-body">
-                        <form method="POST" action="{{ route('profile.update', auth()->user()->id) }}">
+                        <form method="POST" action="{{ route('profile_edit') }}">
                             @csrf
                             <p class="text-center font-weight-bold">Лични данни</p>
                             <div class="form-group row">

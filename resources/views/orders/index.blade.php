@@ -48,6 +48,8 @@
                                     <hr>
                                     @endforeach
                                     {{ $orders->links() }}
+                                    @else
+                                    <div class="alert alert-info">Няма налични заявки!</div>
                                     @endif
                                 </div>
                             </div>

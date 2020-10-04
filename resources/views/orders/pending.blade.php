@@ -38,11 +38,7 @@
                                                 <strong>Населено място:</strong>
                                                 <span> {{ $order->user->settlement }}</span>
                                             </div>
-                                        <form action="{{ route('orders.update', $order->id) }}" method="POST">
-                                                @csrf
-                                                @method('PUT')
-                                                <button type="submit" class="btn btn-primary">Потвърди</a>
-                                            </form>
+                                     
                                         </div>
                                     </div>
                                     <hr>

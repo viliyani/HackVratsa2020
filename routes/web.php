@@ -11,41 +11,46 @@
 |
 */
 
-// Начална страница
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::view('/', 'welcome')->name('welcome');
 
-// Автентикация
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 
-// Страници изискващи логнат потребител
 Route::middleware(['auth'])->group(function () {
-    // Табло на потребителя
     Route::get('/home', 'ProfileController@index')->name('home');
-    
-    // Редактиране на профил
+
     Route::resource('profile', 'ProfileController');
 
     Route::get('orders/pending', 'OrderController@pending')->name('orders.pending');
     Route::resource('orders', 'OrderController');
-
-    // Примерна страница
-    Route::get('/logged_example', function () {
-        return view('logged_example');
-    })->name('logged_example');
-    
 });
 
-// Асистенти
 Route::middleware(['role:assistant'])->group(function () {
-    Route::prefix('assistant')->group(function () {
-        Route::resource('/', 'AssistantController');
+    Route::prefix('manage')->group(function () {
+        Route::get('/', 'Manage\ManageController@index');
+        Route::get('/dashboard', 'Manage\ManageController@dashboard')->name('manage.dashboard');
+        Route::resource('/users', 'Manage\UserController', ['except' => 'destroy']);
+
+
+        // Roles
+        Route::resource('/roles', 'Manage\RoleController');
+
+
+        // Categories
+        Route::resource('/categories', 'Manage\CategoryController', [
+            'as' => 'manage',
+            'except' => ['create', 'show']
+        ]);
     });
 });
 
-// Карантинирани
+
+// Route::middleware(['role:assistant'])->group(function () {
+//     Route::prefix('assistant')->group(function () {
+//         Route::resource('/', 'AssistantController');
+//     });
+// });
+
 Route::middleware(['role:quarantined'])->group(function () {
 
     Route::get('/quarantined/my_requests', 'QuarantinedController@myRequests')->name('quarantined.my_requests');

@@ -28,6 +28,6 @@ class RolesTableSeeder extends Seeder
         $roleAdmin->name = 'Администратор';
         $roleAdmin->slug = 'admin';
         $roleAdmin->description = 'Има достъп до всичко.';
-        $roleAssistant->save();
+        $roleAdmin->save();
     }
 }

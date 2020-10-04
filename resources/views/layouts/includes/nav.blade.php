@@ -3,7 +3,8 @@
         <a class="navbar-brand" href="{{route('welcome')}}">
             <img src="{{asset('images/logo.png')}}" alt="" height="60">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fas fa-bars"></i>
         </button>
 
@@ -12,12 +13,21 @@
                 <li class="nav-item"><a href="{{route('welcome')}}" class="nav-link">Начало</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Контакти</a></li>
                 @guest
-                    
-                <li class="nav-item"><a href="{{route('login')}}" class="nav-link"><i class="fas fa-sign-in-alt"></i> Вход</a></li>
-                <li class="nav-item"><a href="{{route('register')}}" class="nav-link"><i class="fas fa-user-plus"></i> Регистрация</a></li>
+
+                <li class="nav-item"><a href="{{route('login')}}" class="nav-link"><i class="fas fa-sign-in-alt"></i>
+                        Вход</a></li>
+                <li class="nav-item"><a href="{{route('register')}}" class="nav-link"><i class="fas fa-user-plus"></i>
+                        Регистрация</a></li>
                 @else
-                <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="fas fa-user"></i> Профил</a></li>
-            <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link"><i class="fas fa-sign-out-alt"></i> Изход</a></li>
+
+                <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="fas fa-user"></i> Профил</a>
+                </li>
+                <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link"><i
+                            class="fas fa-sign-out-alt"></i> Изход</a></li>
+                @if(auth()->user()->hasRole('admin'))
+                <li class="nav-item"><a href="{{ route('manage.dashboard') }}" class="nav-link"><i
+                            class="fas fa-sign-out-alt"></i> Управлявай</a></li>
+                @endif
                 @endguest
             </ul>
         </div>

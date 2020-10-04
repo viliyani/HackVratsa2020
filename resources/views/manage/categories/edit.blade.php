@@ -1,22 +1,27 @@
 @extends('layouts.manage')
 
+@section('card-header', 'Редактиране на категория')
 @section('content')
-    <h2 class="title is-2">Редактиране на категория</h2>
-    <form action="{{ route('manage.categories.update', $category->slug) }}" method="POST">
-        @csrf
-        @method('PUT')
-        @honeypot
-        <div class="field">
-            <label for="name" class="label">Име</label>
-            <div class="control">
-                <input class="input  @error('name') is-danger @enderror" type="text" name="name" id="name" value="{{ $category->name }}">
-                @error('name')
-                <p class="help is-danger">{{ $message }}</p>
-                @enderror
+<form action="{{ route('manage.categories.update', $category->id) }}" method="POST">
+    @csrf
+    @method('PUT')
+    <div class="form-group row">
+        <label for="name" class="col-4 col-form-label">Име</label>
+        <div class="col-8">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-address-card"></i>
+                    </div>
+                </div>
+            <input id="name" name="name" value="{{ $category->name }}" type="text" class="form-control" required="required">
             </div>
         </div>
-        <div class="field">
-            <button class="button is-info" type="submit">Редактирай!</button>
+    </div>
+    <div class="form-group row">
+        <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">Редактирай</button>
         </div>
-    </form>
+    </div>
+</form>
 @endsection

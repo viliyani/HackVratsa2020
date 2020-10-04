@@ -45,12 +45,6 @@ Route::middleware(['role:assistant'])->group(function () {
 });
 
 
-// Route::middleware(['role:assistant'])->group(function () {
-//     Route::prefix('assistant')->group(function () {
-//         Route::resource('/', 'AssistantController');
-//     });
-// });
-
 Route::middleware(['role:quarantined'])->group(function () {
 
     Route::get('/quarantined/my_requests', 'QuarantinedController@myRequests')->name('quarantined.my_requests');

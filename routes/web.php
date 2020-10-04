@@ -12,6 +12,7 @@
 */
 
 Route::view('/', 'welcome')->name('welcome');
+Route::view('/contact', 'contact')->name('contact');
 
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');

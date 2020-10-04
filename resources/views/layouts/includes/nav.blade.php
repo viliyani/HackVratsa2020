@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="{{route('welcome')}}" class="nav-link">Начало</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Контакти</a></li>
+                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Контакти</a></li>
                 @guest
 
                 <li class="nav-item"><a href="{{route('login')}}" class="nav-link"><i class="fas fa-sign-in-alt"></i>
